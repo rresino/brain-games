@@ -1,0 +1,16 @@
+group 'com.rresino.braingames'
+
+subprojects {
+  apply plugin: 'scala'
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    compile "org.scala-lang:scala-library:${scalaLibVersion}"
+
+    testCompile "org.scalatest:scalatest_${scalaVersion}:${scalaTestVersion}"
+    testCompile "junit:junit:${junitVersion}"
+  }
+}
