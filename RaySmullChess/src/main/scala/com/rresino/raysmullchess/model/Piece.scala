@@ -119,5 +119,5 @@ object Mark extends Piece {
     }
   }
 
-  override def getName(): String = "*"
+  override def getName(): String = "* "
 }

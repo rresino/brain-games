@@ -63,9 +63,12 @@ class Board(totalRows: Int, totalCols: Int) {
     println("-" * (3 * totalCols + 1))
   }
 
-  def showMarksResults(marksPositions: Array[Int]): Unit = {
-    marksPositions.foreach(m =>
-      println(s"(${getRow(m)},${getCol(m)}) => ${getPiece(m).moves(this, m).length}")
+  def getMarksResults(marksPositions: Array[Int]): Array[(Int, Int)] =
+    marksPositions.map(m => (m, getPiece(m).moves(this, m).length))
+
+  def showMarksResults(result: Array[(Int, Int)]): Unit = {
+    result.foreach((r) =>
+        println(s"(${getRow(r._1)},${getCol(r._1)}) => ${r._2}")
     )
   }
 }

@@ -5,7 +5,7 @@ import com.rresino.raysmullchess.model._
 object Main extends App {
 
   val piecesPositions: Array[(Int, Int)] = Array((0,3), (1,6), (3,1), (5,2),(5,4))
-  val marksPositions: Array[(Int, Int)] = Array((1,0), (3,7),(7,3))
+  val marksPositions: Array[(Int, Int)] = Array((1,0), (3,6),(7,3))
 
   def getPiecePosition(b: Board)(x: Int) = b.getPosition(piecesPositions(x)._1, piecesPositions(x)._2)
 
@@ -38,10 +38,15 @@ object Main extends App {
   }
 
   boards.foreach(b => {
-    println()
-    b.show()
-    b.showMarksResults(marksPositions.map(p => b.getPosition(p._1,p._2)))
-    println()
-    println()
+
+    val markresults = b.getMarksResults(marksPositions.map(p => b.getPosition(p._1,p._2)))
+
+    if (markresults.foldLeft(true)((acc, elem) => acc && elem._2 == 2)) {
+      println()
+      b.show()
+      b.showMarksResults(markresults)
+      println()
+      println()
+    }
   })
 }

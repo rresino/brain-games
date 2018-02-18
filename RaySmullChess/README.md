@@ -1,5 +1,5 @@
-	
-** Ray and Smull's Chess Puzzle
+
+** Ray and Smull's Chess Puzzle **
 
 An introduction -- from Puzzles from Other Worlds
 by Martin Gardner (Vintage Books - 1984):
